@@ -1,4 +1,4 @@
-ARG  NODE_VERSION=latest
+ARG  NODE_VERSION=alpine
 FROM node:${NODE_VERSION}
 
 ADD ["package.json", "package-lock.json" , "/sources/"]
@@ -7,7 +7,4 @@ RUN npm ci
 
 ADD ./ /sources
 
-RUN npm run build
-
-FROM docker.totvs.io/thf/proxy
-COPY --from=0 /sources/dist /sources
+CMD ["npm", "run", "start"]
