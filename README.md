@@ -1,2 +1,0 @@
-# tocai-backend
-project TOCAI
