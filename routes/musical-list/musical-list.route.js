@@ -7,4 +7,6 @@ router.get('/list/:typeuser', musical_list_controller.musical_list_all);
 
 router.get('/email/:email', musical_list_controller.musical_list_email);
 
+router.post('/sendmail', musical_list_controller.musical_list_sendmail);
+
 module.exports = router;
